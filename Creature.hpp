@@ -9,7 +9,8 @@
 #include <vector>
 #include <cmath>
 #include <array>
-#include <unistd.h>
+#include <chrono>
+#include <thread>
 using namespace std;
 
 const array<string, 1> actions = {
@@ -24,9 +25,6 @@ enum class TurnEffect {
 
 class Creature : public BaseStats
 {
-
-protected:
-  //Inventory inventory;
 
 private:
   double maxHealth;
@@ -113,7 +111,7 @@ public:
     {
       cout << this->getName() << " has died." << endl;
       this->currentHealth = 0;
-      sleep(1);
+      this_thread::sleep_for(1000ms);
     }
   }
 
@@ -135,7 +133,7 @@ public:
       this->currentHealth = this->maxHealth;
     double healed = this->currentHealth - oldHealth;
     cout << this->getName() << " healed " << healed << "HP" << endl;
-    sleep(1);
+    this_thread::sleep_for(1000ms);
   }
 
   void attack(Creature &victim)
@@ -159,7 +157,7 @@ public:
     {
       cout << this->getName() << " attempted to attack " << victim.getName() << ", but missed." << endl;
     }
-    sleep(1);
+    this_thread::sleep_for(1000ms);
   }
 
   void printInfo()
@@ -203,7 +201,7 @@ public:
 
   void useItem(string name) {
     cout << this->getName() << " used a " << name << "." << endl;
-    sleep(1);
+    this_thread::sleep_for(1000ms);
     if (name == "Health Potion") {
       this->giveHealth(40);
     }
