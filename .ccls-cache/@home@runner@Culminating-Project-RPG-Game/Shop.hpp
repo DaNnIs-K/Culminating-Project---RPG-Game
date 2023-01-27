@@ -5,10 +5,69 @@
 #include <vector>
 #include <unistd.h>
 #include "gameItems.hpp"
-#include "ShopItem.hpp"
 #include "Player.hpp"
 
 using namespace std;
+
+enum ItemType {
+  ARMOUR,
+  WEAPON,
+  MISC
+};
+
+class ShopItem {
+  
+  private:
+    string name;
+    double price;
+    ItemType type;
+
+  public:
+    ShopItem(string name, double price, ItemType type = MISC) : name(name), price(price), type(type) {}
+
+    string getName() {
+      return this->name;
+    }
+
+    double getPrice() {
+      return this->price;
+    }
+
+    void print() {
+      cout << "    Name: " << this->name << endl;
+      cout << "    Price: " << this->price << endl;
+      switch(this->type) {
+        case WEAPON:
+        {
+          Weapon weapon = gameItems.weapons.getItem(this->name);
+          cout << "    Damage: " << weapon.getDamage() << endl;
+          weapon.printBaseStats("    ", false);
+          break;
+        }
+        case ARMOUR:
+        {
+          Armour armour = gameItems.armours.getItem(this->name);
+          cout << "    Defence: " << armour.getDefence() << endl;
+          armour.printBaseStats("    ", false);
+          break;
+        }
+      }
+    }
+
+    void giveTo(Player &p) {
+      switch(this->type) {
+        case ARMOUR:
+          p.equipArmour(gameItems.armours.getItem(this->name));
+          break;
+        case WEAPON:
+          p.equipWeapon(gameItems.weapons.getItem(this->name));
+          break;
+        case MISC:
+          p.inventory.addItem(this->name);
+          break;
+      }
+    }
+};
 
 vector<ShopItem> miscItems = {
   ShopItem("Health Potion", 50),
@@ -18,11 +77,13 @@ vector<vector<ShopItem>> levelItems = {
   vector<ShopItem> { // level 0 requirement
     ShopItem("Sword", 100, WEAPON),
     ShopItem("Wooden Bow", 100, WEAPON),
-    ShopItem("Iron Platemail", 150, ARMOUR),
-    ShopItem("Ranger Coat", 150, ARMOUR)
   },
   vector<ShopItem> { // level 1 requirement
-    ShopItem("Flintlock", 250, WEAPON)
+    ShopItem("Iron Platemail", 150, ARMOUR),
+    ShopItem("Ranger Coat", 150, ARMOUR),
+  },
+  vector<ShopItem> { // level 2 requirement
+    ShopItem("Flintlock", 250, WEAPON),
   },
 };
 

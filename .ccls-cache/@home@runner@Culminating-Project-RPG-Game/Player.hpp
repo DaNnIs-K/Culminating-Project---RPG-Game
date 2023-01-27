@@ -2,7 +2,6 @@
 #define Player_hpp
 
 #include "Creature.hpp"
-#include "Mob.hpp"
 
 using namespace std;
 
@@ -32,7 +31,7 @@ class Player : public Creature {
   public:
     Player(Creature creature, double currency = 100) : Creature(creature), currency(currency) {}
 
-    TurnEffect doTurn(Mob& opponent) {
+    TurnEffect doTurn(Creature& opponent) {
       char action = getAction()[0];
       switch(action) {
         case 'A':

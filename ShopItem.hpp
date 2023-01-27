@@ -2,6 +2,7 @@
 #define ShopItem_hpp
 
 #include <string>
+#include "gameItems.hpp"
 using namespace std;
 
 enum ItemType {
@@ -41,7 +42,7 @@ class ShopItem {
         }
         case ARMOUR:
         {
-          Armour armour = gameItems.armours.getItem(this->name) ;
+          Armour armour = gameItems.armours.getItem(this->name);
           cout << "    Defence: " << armour.getDefence() << endl;
           armour.printBaseStats("    ", false);
           break;
