@@ -11,7 +11,8 @@
 #include <map>
 #include <iostream>
 #include <string>
-#include <unistd.h>
+#include <chrono>
+#include <thread>
 using namespace std;
 
 class Game
@@ -62,13 +63,13 @@ private:
                     {
                         cout << player.getName() << " has escaped the fight." << endl;
                         this->gameState = INTERSTICE;
-                        sleep(1);
+                        this_thread::sleep_for(1000ms);
                         return;
                     }
                     else
                     {
                         cout << player.getName() << " has attempted to flee, sadly they were caught." << endl;
-                        sleep(1);
+                        this_thread::sleep_for(1000ms);
                     }
                     break;
                 }
