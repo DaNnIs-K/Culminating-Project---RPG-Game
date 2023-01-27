@@ -81,6 +81,10 @@ public:
       {
         p.increaseMaxHealth(25);
       }
+      else if (this->name == "Damage Upgrade")
+      {
+        p.increaseBaseDamage(2.5);
+      }
       break;
     case MISC:
       p.inventory.addItem(this->name);
@@ -93,6 +97,7 @@ vector<ShopItem> miscItems = {
     ShopItem("Health Potion", 50),
     ShopItem("Health Upgrade", 200, INSTANTUSE),
     ShopItem("Heal", 75, INSTANTUSE),
+    ShopItem("Damage Upgrade", 200, INSTANTUSE),
 };
 
 vector<vector<ShopItem>> levelItems = {

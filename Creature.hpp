@@ -138,7 +138,13 @@ public:
 
   void increaseMaxHealth(double amt) {
     this->maxHealth += amt;
-    cout << this->getName() << " increased their max health by " << amt << "hp." << endl;
+    cout << this->getName() << " increased their max health by " << amt << "." << endl;
+    this_thread::sleep_for(1000ms);
+  }
+
+  void increaseBaseDamage(double amt) {
+    this->baseDamage += amt;
+    cout << this->getName() << " increased their base damage by " << amt << "." << endl;
     this_thread::sleep_for(1000ms);
   }
 
