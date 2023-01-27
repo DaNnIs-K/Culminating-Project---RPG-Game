@@ -4,8 +4,6 @@
 #include <vector>
 #include <string>
 #include "GameItemContainer.hpp"
-#include "ShopItem.hpp"
-#include "Mob.hpp"
 using namespace std;
 
 class GameItems {
@@ -21,7 +19,7 @@ class GameItems {
       // ----------------------<Weapons>----------------------
       this->weapons.addItem(Weapon(BaseStats("Sword", 10, 15, 85), 25));
       this->weapons.addItem(Weapon(BaseStats("Flintlock", 10, 25, 70), 40));
-      this->weapons.addItem(Weapon(BaseStats("Wooden Bow", 50, 50, 60), 30));
+      this->weapons.addItem(Weapon(BaseStats("Wooden Bow", 50, 50, 40), 30));
       // -----------------------------------------------------
 
       // Armour(BaseStats stats = BaseStats(), double defence = 0)
@@ -63,12 +61,6 @@ template<typename T> class TierSorter {
       }
       return tierItems[rand() % tierItems.size()];
     }
-};
-
-class GameSettings {
-  public:
-    TierSorter<ShopItem> shopLevelItems;
-    TierSorter<Mob> 
 };
 
 #endif
