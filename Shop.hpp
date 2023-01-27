@@ -14,7 +14,8 @@ enum ItemType
 {
   ARMOUR,
   WEAPON,
-  MISC
+  MISC,
+  INSTANTUSE,
 };
 
 class ShopItem
@@ -71,6 +72,16 @@ public:
     case WEAPON:
       p.equipWeapon(gameItems.weapons.getItem(this->name));
       break;
+    case INSTANTUSE:
+      if (this->name == "Heal") 
+      {
+        p.giveHealth(50);
+      }
+      else if (this->name == "Health Upgrade")
+      {
+        p.increaseMaxHealth(25);
+      }
+      break;
     case MISC:
       p.inventory.addItem(this->name);
       break;
@@ -80,6 +91,8 @@ public:
 
 vector<ShopItem> miscItems = {
     ShopItem("Health Potion", 50),
+    ShopItem("Health Upgrade", 200, INSTANTUSE),
+    ShopItem("Heal", 75, INSTANTUSE),
 };
 
 vector<vector<ShopItem>> levelItems = {
