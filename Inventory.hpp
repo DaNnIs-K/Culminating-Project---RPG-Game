@@ -13,7 +13,7 @@ class Inventory {
 
   public:
     void addItem(string itemName, int amt = 1) {
-      // maps are binary search trees, so this is efficient.
+      // maps are internally binary search trees, so this is efficient.
       if (this->containsItem(itemName))
       {
         this->items[itemName] += abs(amt);

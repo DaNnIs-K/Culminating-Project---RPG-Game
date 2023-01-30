@@ -184,8 +184,6 @@ public:
         }
     }
 
-    // gonna move this to private
-
     void getPlayerInfo()
     {
         player.printInfo();
