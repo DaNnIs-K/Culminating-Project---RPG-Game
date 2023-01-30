@@ -7,6 +7,7 @@ using namespace std;
 
 int main() {
   
+  cout << "Welcome to BUG HUNTER!" << endl;
   cout << "Press Enter to Start: ";
   cin.get();
 
