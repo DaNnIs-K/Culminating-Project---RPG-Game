@@ -33,7 +33,15 @@ class GameItems {
       // Mob(Creature creature = Creature())
       // ----------------------<Mobs>----------------------
       this->mobs.addItem(Mob(Creature(BaseStats("🐜 Ant", 50, 20, 80))));
-      this->mobs.addItem(Mob(Creature(BaseStats("🦟 Mosquito", 80, 10, 100), Weapon(), Armour(), 30, 20)));
+      this->mobs.addItem(Mob(Creature(BaseStats("🦟 Mosquito", 80, 10, 100), Weapon(), Armour(), 130, 20)));
+      this->mobs.addItem(Mob(Creature(BaseStats("🐛 Caterpillar", 50, 50, 50))));
+      this->mobs.addItem(Mob(Creature(BaseStats("🐞 Lady Beetle", 10, 30, 80), Weapon(), Armour(), 150)));
+      this->mobs.addItem(Mob(Creature(BaseStats("🦗 Cricket", 10, 100, -140))));
+      this->mobs.addItem(Mob(Creature(BaseStats("🦋 Butterfly", 80, 80, 100))));
+      this->mobs.addItem(Mob(Creature(BaseStats("🐌 Snail", 10, 100, -170), Weapon(), Armour(), 200, 50)));
+      this->mobs.addItem(Mob(Creature(BaseStats("🐝 Bee", 80, 70, 50), Weapon(), Armour(), 110, 20)));
+      this->mobs.addItem(Mob(Creature(BaseStats("🦂 Scorpion", 50, 90, 10), Weapon(), Armour(), 150, 30)));
+      this->mobs.addItem(Mob(Creature(BaseStats("🦠 Amoeba", 22, 222, -134), Weapon(), Armour(), 222, 22)));
       // --------------------------------------------------
     }
 };
