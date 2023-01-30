@@ -33,6 +33,7 @@ class GameItems {
       // Mob(Creature creature = Creature())
       // ----------------------<Mobs>----------------------
       this->mobs.addItem(Mob(Creature(BaseStats("🐜 Ant", 50, 20, 80))));
+      this->mobs.addItem(Mob(Creature(BaseStats("🦟 Mosquito", 80, 10, 100), Weapon(), Armour(), 30, 20)));
       // --------------------------------------------------
     }
 };
