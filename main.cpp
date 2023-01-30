@@ -1,4 +1,6 @@
-// @Author MatteoI, DanK
+/** 
+ * @author MatteoI, DanK
+ */
 
 #include <iostream>
 #include "Game.hpp"
