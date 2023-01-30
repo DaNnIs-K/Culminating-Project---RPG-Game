@@ -7,6 +7,7 @@
 #include "BaseStats.hpp"
 #include "Shop.hpp"
 #include "gameItems.hpp"
+#include "TierSorter.hpp"
 #include <vector>
 #include <map>
 #include <iostream>
@@ -31,6 +32,7 @@ class Game
     };
 
 private:
+    TierSorter<Mob> mobLevels;
     Player &player;
     GameState gameState;
     int worldLevel;
@@ -38,8 +40,8 @@ private:
 
     void fight()
     {
-        int mobIndex = rand() % gameItems.mobs.size();
-        Mob currentMob = gameItems.mobs[mobIndex];
+
+        Mob currentMob = mobLevels.getRandomItemOfTier(worldLevel);
 
         while (!currentMob.isDead() && !this->player.isDead())
         {
@@ -162,6 +164,18 @@ private:
 public:
     Game(Player &p) : player(p)
     {
+
+        mobLevels.addItem(0, gameItems.mobs.getItem("🦗 Cricket"));
+        mobLevels.addItem(0, gameItems.mobs.getItem("🐛 Caterpillar"));
+        mobLevels.addItem(1, gameItems.mobs.getItem("🐜 Ant"));
+        mobLevels.addItem(1, gameItems.mobs.getItem("🦋 Butterfly"));
+        mobLevels.addItem(2, gameItems.mobs.getItem("🐞 Lady Beetle"));
+        mobLevels.addItem(2, gameItems.mobs.getItem("🦠 Amoeba"));
+        mobLevels.addItem(3, gameItems.mobs.getItem("🐝 Bee"));
+        mobLevels.addItem(3, gameItems.mobs.getItem("🦂 Scorpion"));
+        mobLevels.addItem(4, gameItems.mobs.getItem("🦟 Mosquito"));
+        mobLevels.addItem(4, gameItems.mobs.getItem("🐌 Snail"));
+
         this->gameState = INTERSTICE;
         this->worldLevel = 0;
         while (true)
