@@ -13,10 +13,6 @@
 #include <thread>
 using namespace std;
 
-const array<string, 1> actions = {
-"ATTACK",
-};
-
 enum class TurnEffect {
   FLEE,
   NONE,
@@ -199,17 +195,11 @@ public:
     cout << "Critical Damage: " << this->getCriticalDamage() << "%" << endl;
     cout << "Accuracy: " << this->getAccuracy() << "%" << endl;
     cout << endl;
-    //this->inventory.printInventory();
  }
 
   bool isDead() {
     return this->currentHealth == 0;
   }
-
-  // get health percentage (current/max)
-  // multiply it by 10
-  // ceil it
-  // thats the number of red squares
 
   void useItem(string name) {
     cout << this->getName() << " used a " << name << "." << endl;
