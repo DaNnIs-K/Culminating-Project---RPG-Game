@@ -20,13 +20,18 @@ class GameItems {
       this->weapons.addItem(Weapon(BaseStats("Sword", 10, 15, 85), 25));
       this->weapons.addItem(Weapon(BaseStats("Flintlock", 10, 25, 70), 40));
       this->weapons.addItem(Weapon(BaseStats("Wooden Bow", 50, 50, 40), 30));
+      this->weapons.addItem(Weapon(BaseStats("Shotgun", 30, 80, 10), 50));
+      this->weapons.addItem(Weapon(BaseStats("Excalibur", 1, 200, 40), 60));
+      this->weapons.addItem(Weapon(BaseStats("Bug Spray", 50, 50, 1), 70));
       // -----------------------------------------------------
 
       // Armour(BaseStats stats = BaseStats(), double defence = 0)
       // ----------------------<Armours>----------------------
       this->armours.addItem(Armour(BaseStats("Iron Platemail", 0, 0, 50), 20));
       this->armours.addItem(Armour(BaseStats("Ranger Coat", 15, 15, 80), 10));
-      this->armours.addItem(Armour(BaseStats("Iron Platemail", 0, 0, 50), 20));
+      this->armours.addItem(Armour(BaseStats("Puffer Jacket", 0, 0, 70), 30));
+      this->armours.addItem(Armour(BaseStats("Cowboy Hat", 30, 30, 90), 5));
+      this->armours.addItem(Armour(BaseStats("Bee Suit", 0, 0, 10), 50));
       // -----------------------------------------------------
 
       // Creature(BaseStats stats = BaseStats(), Weapon equippedWeapon = Weapon(), Armour equippedArmour = Armour(), double maxHealth = 100, double baseDamage = 10, Inventory inventory = Inventory())
