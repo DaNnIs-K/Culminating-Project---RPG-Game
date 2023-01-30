@@ -115,6 +115,18 @@ vector<vector<ShopItem>> levelItems = {
         // level 2 requirement
         ShopItem("Flintlock", 250, WEAPON),
     },
+    vector<ShopItem> { // level 3 requirement
+        ShopItem("Shotgun", 300, WEAPON),
+        ShopItem("Puffer Jacket", 200, ARMOUR),
+    },
+    vector<ShopItem> { // level 4 requirement
+        ShopItem("Excalibur", 500, WEAPON),
+    },
+    vector<ShopItem> { //level 5 requirement
+        ShopItem("Bug Spray", 200, WEAPON),
+        ShopItem("Cowboy Hat", 350, ARMOUR),
+        ShopItem("Bee Suit", 200, ARMOUR),
+    },
 };
 
 class Shop
