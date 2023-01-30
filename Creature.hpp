@@ -136,6 +136,18 @@ public:
     this_thread::sleep_for(1000ms);
   }
 
+  void increaseMaxHealth(double amt) {
+    this->maxHealth += amt;
+    cout << this->getName() << " increased their max health by " << amt << "." << endl;
+    this_thread::sleep_for(1000ms);
+  }
+
+  void increaseBaseDamage(double amt) {
+    this->baseDamage += amt;
+    cout << this->getName() << " increased their base damage by " << amt << "." << endl;
+    this_thread::sleep_for(1000ms);
+  }
+
   void attack(Creature &victim)
   {
     if (this->isHit())
